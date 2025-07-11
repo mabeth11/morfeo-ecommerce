@@ -1,0 +1,130 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morfeo - Tu Tienda de Vinilos</title>
+
+    <!-- ⭐ FAVICON personalizado tipo vinilo -->
+    <link rel="icon" type="image/png" href="barbell_12237587.png">
+
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <a href="#carrito" class="floating-cart-icon" aria-label="Ver carrito de compras">
+        🛒 <span class="cart-count">0</span>
+    </a>
+
+    <header>
+        <h1>Morfeo</h1>
+        <p>El sueño de tu colección de vinilos.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#productos">Vinilos</a></li>
+            <li><a href="#reseñas">Reseñas</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#carrito">Carrito</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="inicio">
+            <h2>Bienvenido a Morfeo</h2>
+            <p>Descubre los mejores álbumes, desde clásicos atemporales hasta las últimas novedades que te harán soñar.</p>
+
+            <!-- ⭐ Video actualizado con el link correcto proporcionado -->
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Y_tEPA6nYGo"
+                    title="Video presentación Morfeo" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+
+            <p>Déjate llevar por la magia del sonido análogo y vive una experiencia auditiva inigualable con Morfeo.</p>
+        </section>
+
+        <section id="productos">
+            <h2>Nuestros Vinilos</h2>
+            <div class="lista-vinilos">
+                <p>Cargando vinilos...</p>
+            </div>
+        </section>
+
+        <section id="reseñas">
+            <h2>Lo que dicen nuestros coleccionistas</h2>
+            <div class="reseñas-grid">
+                <article class="reseña-card">
+                    <h3>Sonido Impecable</h3>
+                    <p>"Los vinilos llegaron en perfecto estado y suenan increíble. ¡Muy contento con mi compra en Morfeo!"</p>
+                    <p class="autor">- Ana G.</p>
+                </article>
+                <article class="reseña-card">
+                    <h3>Variedad Sorprendente</h3>
+                    <p>"Encontré joyas que no esperaba. La selección es fantástica y los precios son justos."</p>
+                    <p class="autor">- Marcos L.</p>
+                </article>
+                <article class="reseña-card">
+                    <h3>Atención al Cliente Top</h3>
+                    <p>"Tuve una consulta y me respondieron de inmediato, resolviendo todas mis dudas. ¡Excelente!"</p>
+                    <p class="autor">- Sofía R.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="nosotros">
+            <h2>Sobre Morfeo</h2>
+            <p>En <strong>Morfeo</strong>, somos más que una tienda; somos guardianes de la experiencia musical auténtica. Nacimos de la pasión por el sonido puro del vinilo y el encanto de coleccionar arte.</p>
+            <p>Nuestra misión es ofrecerte una selección curada de vinilos de alta calidad, asegurando que cada giro del plato sea un viaje único. Sumérgete con nosotros en el vasto universo musical y encuentra ese álbum que siempre soñaste tener.</p>
+        </section>
+
+        <section id="contacto">
+            <h2>Hablemos de música</h2>
+            <p>¿Tienes alguna pregunta, sugerencia o simplemente quieres compartir tu vinilo favorito? ¡No dudes en escribirnos! Estamos aquí para ayudarte a completar tu sueño musical.</p>
+            
+            <form action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+        </section>
+
+        <section id="carrito">
+            <h2>Tu Carrito de Sueños Musicales</h2>
+            <div class="carrito-items-list">
+                <p>El carrito está vacío.</p>
+            </div>
+            <div class="carrito-total">
+                Total: <span id="cart-total">$0.00</span>
+            </div>
+            <div class="carrito-actions">
+                <button id="buy-button">Comprar</button>
+                <button id="clear-cart-button">Vaciar Carrito</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Morfeo - Tu Tienda de Vinilos. Todos los derechos reservados.</p>
+        <div class="redes-sociales">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>

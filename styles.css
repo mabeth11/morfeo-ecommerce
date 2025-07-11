@@ -1,0 +1,572 @@
+/* css/style.css */
+
+/* -------------------------------------- */
+/* Importar Fuentes y Variables de Color */
+/* -------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    /* Variables CSS para colores - Tonalidades de Grises (manteniendo las tuyas) */
+    --color-gris-oscuro: #2c3e50; /* Gris muy oscuro, casi negro azulado */
+    --color-gris-medio: #34495e;  /* Gris oscuro */
+    --color-gris-claro: #ecf0f1;  /* Gris muy claro, casi blanco */
+    --color-gris-fondo: #f8f9fa; /* Gris casi blanco para fondos */
+    --color-texto-general: #333; /* Texto oscuro para buena legibilidad */
+    --color-texto-claro: #fff; /* Texto blanco para fondos oscuros */
+
+    /* Nuevos colores de Acento */
+    --color-acento-principal: #00BCD4; /* Cian brillante / Azul Eléctrico - para acciones primarias */
+    --color-acento-hover: #0097A7;   /* Cian más oscuro para hover */
+    --color-accion-negativa: #D32F2F; /* Rojo oscuro / Ladrillo - para eliminar/vaciar */
+    --color-accion-negativa-hover: #C62828; /* Rojo aún más oscuro para hover */
+}
+
+/* -------------------------------------- */
+/* Estilos Globales y Básicos */
+/* -------------------------------------- */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--color-texto-general);
+    background-color: var(--color-gris-fondo); /* Fondo general muy claro */
+}
+
+/* -------------------------------------- */
+/* Header */
+/* -------------------------------------- */
+
+header {
+    background-color: var(--color-gris-oscuro); /* Fondo oscuro para el header */
+    color: var(--color-texto-claro);
+    text-align: center;
+    padding: 2rem 1rem;
+    font-family: 'Oswald', sans-serif;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3.5em; /* Ligeramente más grande */
+    letter-spacing: 3px; /* Más espaciado para el nombre Morfeo */
+    text-transform: uppercase;
+}
+
+header p {
+    font-size: 1.3em; /* Ligeramente más grande */
+    margin-top: 0.5rem;
+}
+
+/* -------------------------------------- */
+/* Navegación */
+/* -------------------------------------- */
+
+nav {
+    background-color: var(--color-gris-medio); /* Un gris oscuro para la nav */
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 1.5rem;
+}
+
+nav ul li a {
+    color: var(--color-texto-claro);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: var(--color-acento-principal); /* Azul Eléctrico para hover */
+    color: var(--color-texto-claro);
+}
+
+/* -------------------------------------- */
+/* Ícono de Carrito Flotante */
+/* -------------------------------------- */
+.floating-cart-icon {
+    position: fixed; /* Lo fija en la pantalla */
+    top: 20px; /* Distancia desde la parte superior */
+    right: 20px; /* Distancia desde la derecha */
+    background-color: var(--color-acento-principal); /* Azul Eléctrico */
+    color: var(--color-texto-claro);
+    border-radius: 50%; /* Hace que sea circular */
+    width: 50px; /* Ancho del círculo */
+    height: 50px; /* Alto del círculo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8em; /* Tamaño del ícono */
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra para que destaque */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.floating-cart-icon:hover {
+    background-color: var(--color-acento-hover); /* Azul Eléctrico más oscuro */
+    transform: scale(1.05); /* Pequeño efecto de escala al pasar el ratón */
+}
+
+/* Contador dentro del ícono flotante */
+.floating-cart-icon .cart-count {
+    position: absolute;
+    top: -5px; /* Posiciona el contador arriba del icono */
+    right: -5px; /* Posiciona el contador a la derecha del icono */
+    background-color: var(--color-accion-negativa); /* Rojo oscuro para el contador (llama la atención) */
+    color: var(--color-texto-claro);
+    border-radius: 50%;
+    padding: 0.2em 0.5em;
+    font-size: 0.6em; /* Tamaño de fuente más pequeño para el contador */
+    min-width: 1.5em; /* Asegura un ancho mínimo */
+    text-align: center;
+    display: flex; /* Usar flex para centrar el número perfectamente */
+    justify-content: center;
+    align-items: center;
+    height: 1.5em; /* Asegura que sea un círculo si es un solo dígito */
+    font-weight: bold;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+
+/* -------------------------------------- */
+/* Contenido Principal (main y sections) */
+/* -------------------------------------- */
+
+main {
+    padding: 0 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    background-color: var(--color-gris-claro); /* Fondo claro para las secciones */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: 'Oswald', sans-serif;
+    color: var(--color-gris-oscuro); /* Título de sección en gris oscuro */
+    font-size: 2.5em; /* Ligeramente más grande */
+}
+
+section p {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Sección de inicio con fondo de imagen/degradado */
+#inicio {
+    background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(52, 73, 94, 0.8)), url('https://via.placeholder.com/1500x500/34495e/ecf0f1?text=Fondo+de+Vinilos+Morfeo') no-repeat center center/cover;
+    color: var(--color-texto-claro);
+    padding: 4rem 1rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Contenedor de video (si usas iframe) */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    height: 0;
+    overflow: hidden;
+    margin: 2rem auto;
+    max-width: 800px; /* Limita el ancho máximo del video */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* -------------------------------------- */
+/* Sección "Productos" (Flexbox) */
+/* -------------------------------------- */
+
+#productos .lista-vinilos {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las cards se envuelvan */
+    justify-content: center; /* Centra las cards horizontalmente */
+    gap: 20px; /* Espacio entre las cards */
+    padding: 0 1rem;
+}
+
+.vinilo-card {
+    background-color: var(--color-gris-fondo); /* Fondo de la tarjeta muy claro */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    width: 100%; /* Por defecto ocupa todo el ancho */
+    max-width: 300px; /* Ancho máximo para una card */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.vinilo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.vinilo-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.vinilo-card h3 {
+    font-size: 1.4em;
+    color: var(--color-gris-oscuro); /* Título de la tarjeta en gris oscuro */
+    margin-bottom: 0.5rem;
+}
+
+.vinilo-card p {
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: var(--color-acento-principal); /* Precio en tono azul eléctrico */
+}
+
+.vinilo-card button {
+    background-color: var(--color-acento-principal); /* Botón en azul eléctrico */
+    color: var(--color-texto-claro);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.vinilo-card button:hover {
+    background-color: var(--color-acento-hover); /* Azul eléctrico más oscuro al pasar el ratón */
+}
+
+/* -------------------------------------- */
+/* Sección "Reseñas" (Grid) */
+/* -------------------------------------- */
+
+#reseñas .reseñas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas responsivas */
+    gap: 20px;
+    padding: 0 1rem;
+}
+
+.reseña-card {
+    background-color: var(--color-gris-fondo); /* Fondo de la tarjeta de reseña muy claro */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.reseña-card h3 {
+    color: var(--color-gris-oscuro); /* Título de reseña en gris oscuro */
+    margin-bottom: 0.8rem;
+}
+
+.reseña-card .autor {
+    font-style: italic;
+    color: #777;
+    margin-top: 1rem;
+}
+
+/* -------------------------------------- */
+/* Sección "Contacto" (Formulario Responsivo) */
+/* -------------------------------------- */
+
+#contacto form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#contacto label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--color-texto-general);
+}
+
+#contacto input[type="text"],
+#contacto input[type="email"],
+#contacto textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ccc; /* Borde más suave */
+    border-radius: 5px;
+    box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+    background-color: var(--color-gris-claro); /* Fondo claro para los campos */
+}
+
+#contacto textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+#contacto button[type="submit"] {
+    background-color: var(--color-acento-principal); /* Botón en azul eléctrico */
+    color: var(--color-texto-claro);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#contacto button[type="submit"]:hover {
+    background-color: var(--color-acento-hover); /* Azul eléctrico más oscuro al pasar el ratón */
+}
+
+/* Media Queries para el formulario de contacto */
+@media (max-width: 768px) {
+    #contacto form {
+        padding: 0.5rem; /* Menos padding en pantallas medianas */
+    }
+}
+
+@media (max-width: 480px) {
+    #contacto form {
+        padding: 0; /* Sin padding en pantallas muy pequeñas */
+    }
+
+    #contacto input[type="text"],
+    #contacto input[type="email"],
+    #contacto textarea {
+        margin-bottom: 1rem; /* Menos margen en pantallas pequeñas */
+    }
+
+    #contacto button[type="submit"] {
+        padding: 0.8rem 1.5rem; /* Botón más pequeño */
+        font-size: 1em;
+    }
+}
+
+/* -------------------------------------- */
+/* Carrito de Compras (Sección) */
+/* -------------------------------------- */
+
+#carrito .carrito-items-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#carrito .carrito-items-list p {
+    text-align: center;
+    color: #777;
+    font-style: italic;
+}
+
+#carrito .carrito-items-list li {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px dashed #ccc;
+    background-color: var(--color-gris-fondo); /* Fondo claro para cada item del carrito */
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+#carrito .carrito-items-list li:last-child {
+    border-bottom: none;
+}
+
+#carrito .carrito-items-list li span:first-child {
+    flex-basis: 50%; /* Ocupa la mitad del ancho en pantallas grandes */
+    flex-grow: 1; 
+    font-weight: bold;
+    color: var(--color-gris-oscuro);
+    text-align: left;
+}
+
+#carrito .item-quantity {
+    width: 60px; /* Ancho fijo para el input de cantidad */
+    text-align: center;
+    margin: 0 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: var(--color-gris-claro); /* Fondo claro para el input */
+}
+
+#carrito .remove-item-btn {
+    background-color: var(--color-accion-negativa); /* Rojo oscuro para el botón de eliminar */
+    color: var(--color-texto-claro);
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+    margin-left: 10px; /* Espacio a la izquierda */
+}
+
+#carrito .remove-item-btn:hover {
+    background-color: var(--color-accion-negativa-hover); /* Rojo más oscuro al pasar el ratón */
+}
+
+#carrito .carrito-total {
+    border-top: 2px solid var(--color-gris-medio);
+    padding-top: 1rem;
+    margin-top: 1rem;
+    font-size: 1.8em; /* Tamaño más grande */
+    font-weight: bold;
+    color: var(--color-gris-oscuro);
+    text-align: right;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 1rem;
+}
+
+/* Estilos para los botones de acción del carrito (Comprar/Vaciar) */
+.carrito-actions {
+    max-width: 800px;
+    margin: 1.5rem auto 0 auto;
+    display: flex;
+    justify-content: flex-end; /* Alinea los botones a la derecha */
+    gap: 15px; /* Espacio entre los botones */
+    padding-right: 1rem;
+}
+
+.carrito-actions button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#buy-button {
+    background-color: var(--color-acento-principal); /* Azul Eléctrico para comprar */
+    color: var(--color-texto-claro);
+}
+
+#buy-button:hover {
+    background-color: var(--color-acento-hover);
+    transform: translateY(-2px);
+}
+
+#clear-cart-button {
+    background-color: var(--color-accion-negativa); /* Rojo oscuro para vaciar */
+    color: var(--color-texto-claro);
+}
+
+#clear-cart-button:hover {
+    background-color: var(--color-accion-negativa-hover);
+    transform: translateY(-2px);
+}
+
+/* Media Queries para items del carrito y acciones en pantallas pequeñas */
+@media (max-width: 600px) {
+    #carrito .carrito-items-list li {
+        flex-direction: column; /* Apilar en columnas */
+        align-items: flex-start;
+        padding: 0.8rem;
+    }
+    #carrito .carrito-items-list li span:first-child {
+        flex-basis: auto; /* Desactivar flex-basis */
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    #carrito .item-quantity {
+        margin: 0.5rem 0;
+    }
+    #carrito .remove-item-btn {
+        margin-left: 0;
+        margin-top: 0.5rem;
+        width: 100%; /* Botón de eliminar ocupa todo el ancho */
+    }
+    #carrito .carrito-total {
+        padding-right: 0;
+        text-align: center;
+    }
+    .carrito-actions {
+        flex-direction: column; /* Apilar botones en pantallas pequeñas */
+        align-items: center;
+        padding-right: 0;
+    }
+    .carrito-actions button {
+        width: 90%; /* Ocupan casi todo el ancho */
+        margin-bottom: 10px; /* Espacio entre botones apilados */
+    }
+}
+
+
+/* -------------------------------------- */
+/* Footer */
+/* -------------------------------------- */
+
+footer {
+    background-color: var(--color-gris-oscuro); /* Fondo oscuro para el footer */
+    color: var(--color-texto-claro);
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+    font-size: 0.9em;
+}
+
+footer .redes-sociales a {
+    color: var(--color-texto-claro);
+    text-decoration: none;
+    margin: 0 0.8rem;
+    transition: color 0.3s ease;
+}
+
+footer .redes-sociales a:hover {
+    color: var(--color-acento-principal); /* Azul Eléctrico para hover en redes sociales */
+}
+
+/* -------------------------------------- */
+/* Mejoras de Accesibilidad */
+/* -------------------------------------- */
+
+a:focus, button:focus, input:focus, textarea:focus {
+    outline: 2px solid var(--color-acento-principal);
+    outline-offset: 2px;
+}
